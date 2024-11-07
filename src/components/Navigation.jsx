@@ -1,9 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 import { RequireAuth } from "./RequireAuth";
 
-import Init from "components/shared/Init";
-import LoginScreen from "pages/LoginScreen";
-import RegisterScreen from "pages/RegisterScreen"
+import CarrousselScreen from "screens/CarrousselScreen";
+import LoginScreen from "screens/LoginScreen";
+import RegisterScreen from "screens/RegisterScreen"
 
 export default function Navigation() {
   return (
@@ -12,7 +12,7 @@ export default function Navigation() {
       <Route path="/register" element={<RegisterScreen />} />
 
       <Route element={<RequireAuth />}>
-        <Route path="/" element={<Init />} />
+        <Route path="/" element={<CarrousselScreen />} />
 
       </Route>
     </Routes>
