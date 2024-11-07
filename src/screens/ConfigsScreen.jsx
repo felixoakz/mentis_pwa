@@ -13,16 +13,22 @@ const ConfigsScreen = () => {
   }, [theme]);
 
   const themes = [
-    "light",
-    "dark",
-    "cupcake",
-    "emerald",
-    "synthwave",
-    "retro",
-    "cyberpunk",
-    "luxury",
-    "dracula",
-    "night"
+      "lofi",
+      "bumblebee",
+      "retro",
+      "valentine",
+      "pastel",
+      "autumn",
+      "acid",
+      "nord",
+      "black",
+      "synthwave",
+      "forest",
+      "aqua",
+      "luxury",
+      "business",
+      "night",
+      "dim",
   ];
 
   const handleLogout = async () => {
