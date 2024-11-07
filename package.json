@@ -46,5 +46,13 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "axios": "^1.7.7",
+    "daisyui": "^4.12.14",
+    "react-hook-form": "^7.53.1",
+    "react-router-dom": "^6.28.0",
+    "react-toastify": "^10.0.6",
+    "tailwindcss": "^3.4.14"
   }
 }
