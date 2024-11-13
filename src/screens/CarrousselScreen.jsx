@@ -72,14 +72,14 @@ const CarrousselScreen = () => {
 
         {/* Navigation arrows and active screen name */}
         <div className="flex justify-center items-center py-2">
-          <button onClick={goToPrev} className="btn btn-sm">{'<'}</button>
+          <button onClick={goToPrev} className="btn btn-primary btn-sm">{'<'}</button>
 
           {/* Display the name of the active screen */}
           <div className="text-xl font-semibold mx-4">
             {screens.find((screen) => screen.id === activeScreen)?.name}
           </div>
 
-          <button onClick={goToNext} className="btn btn-sm">{'>'}</button>
+          <button onClick={goToNext} className="btn btn-primary btn-sm">{'>'}</button>
         </div>
       </div>
     </Layout>

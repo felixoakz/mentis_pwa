@@ -8,7 +8,7 @@ export const RequireAuth = () => {
 
   if (loading) return <Loading/>;
 
-  //if (!user) return <Navigate to="/login" state={{ from: location }} replace />;
+  if (!user) return <Navigate to="/login" state={{ from: location }} replace />;
 
   return <Outlet />;
 };

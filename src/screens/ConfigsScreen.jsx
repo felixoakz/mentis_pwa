@@ -13,22 +13,22 @@ const ConfigsScreen = () => {
   }, [theme]);
 
   const themes = [
-      "lofi",
-      "bumblebee",
-      "retro",
-      "valentine",
-      "pastel",
-      "autumn",
-      "acid",
-      "nord",
-      "black",
-      "synthwave",
-      "forest",
-      "aqua",
-      "luxury",
-      "business",
-      "night",
-      "dim",
+    "lofi",
+    "bumblebee",
+    "retro",
+    "valentine",
+    "pastel",
+    "autumn",
+    "acid",
+    "nord",
+    "black",
+    "synthwave",
+    "forest",
+    "aqua",
+    "luxury",
+    "business",
+    "night",
+    "dim",
   ];
 
   const handleLogout = async () => {
@@ -41,23 +41,29 @@ const ConfigsScreen = () => {
   };
 
   return (
-    <div className="flex flex-col space-y-4">
-      <button className="btn btn-outline" onClick={handleLogout}>
+    <div className="flex justify-center items-center flex-col h-full w-full p-8 space-y-4 border">
+      <label className="form-control w-2/4">
+        <div className="label">
+          <span className="label-text">Select Color Theme</span>
+        </div>
+        <select
+          className="select select-primary"
+          value={theme}
+          onChange={handleThemeChange}
+        >
+          <option disabled>Select a theme</option>
+          {themes.map((themeOption) => (
+            <option key={themeOption} value={themeOption}>
+              {themeOption.charAt(0).toUpperCase() + themeOption.slice(1)}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <button className="btn btn-warning w-2/4" onClick={handleLogout}>
         Logout
       </button>
 
-      <select
-        className="select select-bordered w-full max-w-xs"
-        value={theme}
-        onChange={handleThemeChange}
-      >
-        <option disabled>Select a theme</option>
-        {themes.map((themeOption) => (
-          <option key={themeOption} value={themeOption}>
-            {themeOption.charAt(0).toUpperCase() + themeOption.slice(1)}
-          </option>
-        ))}
-      </select>
     </div>
   );
 };
