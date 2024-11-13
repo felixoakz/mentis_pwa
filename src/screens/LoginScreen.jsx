@@ -12,6 +12,7 @@ export default function LoginScreen() {
     try {
       await login(loginData);
       navigate('/');
+
     } catch (error) {
       console.error('Error during login:', error);
     }
@@ -20,7 +21,9 @@ export default function LoginScreen() {
   return (
     <Layout>
       <div className="flex flex-col items-center">
+
         <h1 className="text-3xl font-bold mb-12">mentis</h1>
+
         <form
           onSubmit={handleSubmit(proceedLogin)}
           className="flex flex-col space-y-4 w-full max-w-md"
@@ -51,7 +54,9 @@ export default function LoginScreen() {
               </Link>
             </p>
           </div>
+
         </form>
+
       </div>
     </Layout>
   );

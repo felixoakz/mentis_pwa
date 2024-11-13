@@ -18,7 +18,8 @@ export const AuthProvider = ({ children }) => {
   const getUser = async () => {
     try {
       const response = await getUserApi();
-      setUser(response.data)
+      setUser(response.data);
+
     } catch (e) {
       console.error('// getUser error:', {e})
     } finally {
@@ -30,9 +31,8 @@ export const AuthProvider = ({ children }) => {
   const login = async (data) => {
     try {
       const response = await loginApi(data);
-      if (response.status === 200) {
-        setUser(response.data);
-      }
+      if (response.status === 200) setUser(response.data);
+
     } catch (error) {
       await responseErrors(error);
       console.error('// login error:', {error})
@@ -44,8 +44,10 @@ export const AuthProvider = ({ children }) => {
     try {
       const response = await registerApi(data);
       setUser(response.data.user);
+
     } catch (error) {
       await responseErrors(error);
+      console.error('// responseErrors error:', {error})
     }
   };
 
@@ -56,10 +58,9 @@ export const AuthProvider = ({ children }) => {
       setUser(null);
 
     } catch (error) {
-      console.error('// Logout error:', error);
+      console.error('// logout error:', error);
     }
   };
-
 
   const value = useMemo(
     () => ({

@@ -11,7 +11,6 @@ export const loginApi = async (loginData) => {
 };
 
 export const getUserApi = async () => {
-  await apiClient.get('/sanctum/csrf-cookie');
   return apiClient.get('/api/user');
 }
 

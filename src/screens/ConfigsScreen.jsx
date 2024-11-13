@@ -41,8 +41,9 @@ const ConfigsScreen = () => {
   };
 
   return (
-    <div className="flex justify-center items-center flex-col h-full w-full p-8 space-y-4 border">
-      <label className="form-control w-2/4">
+    <div className="flex justify-center items-center flex-col space-y-4">
+
+      <label className="form-control">
         <div className="label">
           <span className="label-text">Select Color Theme</span>
         </div>
@@ -60,7 +61,7 @@ const ConfigsScreen = () => {
         </select>
       </label>
 
-      <button className="btn btn-warning w-2/4" onClick={handleLogout}>
+      <button className="btn btn-warning" onClick={handleLogout}>
         Logout
       </button>
 

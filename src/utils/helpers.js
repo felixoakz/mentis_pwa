@@ -4,8 +4,7 @@ import { toast } from "react-toastify";
 export const responseErrors = async (error) => {
 
   if (error.message === 'Network Error') {
-    toast.error('Sem conexão com servidor, tente novamente.');
-    toast.info('Caso persista entre em contato com o suporte.');
+    toast.error('No server connection.');
   }
 
   if (error.response) {
