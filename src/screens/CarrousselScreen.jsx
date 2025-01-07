@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react";
-import Layout from "components/shared/Layout";
+import Layout from "components/Layout";
 import HomeScreen from "screens/HomeScreen";
 import FinancesScreen from "screens/FinancesScreen";
 import ConfigsScreen from "screens/ConfigsScreen";

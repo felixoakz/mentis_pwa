@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from 'contexts/AuthContext';
 
-import Layout from 'components/shared/Layout';
+import Layout from 'components/Layout';
 import { displayValidationErrors } from 'utils/helpers';
 
 

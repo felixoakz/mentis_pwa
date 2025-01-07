@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from 'contexts/AuthContext';
-import Layout from 'components/shared/Layout';
+import Layout from 'components/Layout';
 
 export default function LoginScreen() {
   const navigate = useNavigate();
