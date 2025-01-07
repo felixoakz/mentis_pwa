@@ -1,76 +1,36 @@
-import { createContext, useContext, useMemo, useState, useEffect } from 'react';
-
-import { responseErrors } from 'utils/helpers';
-import { loginApi, getUserApi, logoutApi, registerApi } from 'api/auth';
-
+import { createContext, useContext, useMemo, useState } from 'react';
+import { loginApi, registerApi } from 'api/auth';
 
 const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    getUser();
-  }, []);
-
-
-  const getUser = async () => {
-    try {
-      const response = await getUserApi();
-      setUser(response.data);
-
-    } catch (e) {
-      console.error('// getUser error:', {e})
-    } finally {
-      setLoading(false);
-    }
-  }
-
 
   const login = async (data) => {
     try {
       const response = await loginApi(data);
-      if (response.status === 200) setUser(response.data);
-
+      setUser(response.data.user);
     } catch (error) {
-      await responseErrors(error);
-      console.error('// login error:', {error})
+      console.error('Login error:', error);
     }
   };
-
 
   const registerUser = async (data) => {
     try {
       const response = await registerApi(data);
       setUser(response.data.user);
-
     } catch (error) {
-      await responseErrors(error);
-      console.error('// responseErrors error:', {error})
-    }
-  };
-
-
-  const logout = async () => {
-    try {
-      await logoutApi();
-      setUser(null);
-
-    } catch (error) {
-      console.error('// logout error:', error);
+      console.error('Register error:', error);
     }
   };
 
   const value = useMemo(
     () => ({
       user,
-      loading,
-      registerUser,
       login,
-      logout,
+      registerUser,
     }),
-    [user, loading]
+    [user]
   );
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
