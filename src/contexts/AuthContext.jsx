@@ -1,5 +1,6 @@
 import { createContext, useContext, useMemo, useState } from 'react';
 import { loginApi, registerApi } from 'api/auth';
+import { responseErrors } from 'utils/helpers';
 
 const AuthContext = createContext({});
 
@@ -16,7 +17,8 @@ export const AuthProvider = ({ children }) => {
         setUser(user);
       }
     } catch (error) {
-      console.error('Login error:', error);
+      responseErrors(error)
+      console.error('# Login error:', error);
     }
   };
 
@@ -26,7 +28,8 @@ export const AuthProvider = ({ children }) => {
       setUser(response.data.user);
 
     } catch (error) {
-      console.error('Register error:', error);
+      responseErrors(error)
+      console.error('# Register error:', error.response);
     }
   };
 

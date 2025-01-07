@@ -17,7 +17,8 @@ export default function Register() {
   const proceedRegister = async (data) => {
     try {
       await registerUser(data);
-      navigate('/login');
+      navigate('/');
+
     } catch (error) {
       console.error('Error Registering:', error);
     }
@@ -35,9 +36,9 @@ export default function Register() {
         >
           <div className="form-control">
             <input
-              {...register('name', { required: 'Name is required!' })}
+              {...register('username', { required: 'Username is required!' })}
               className="input input-bordered w-full"
-              placeholder="Name"
+              placeholder="Username"
               type="text"
             />
           </div>
