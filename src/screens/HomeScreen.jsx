@@ -3,7 +3,6 @@ import { useAuth } from "contexts/AuthContext";
 const HomeScreen = () => {
   const { user } = useAuth();
 
-  // Handle cases where user might not be loaded yet
   const username = user?.username
     ? user.username.charAt(0).toUpperCase() + user.username.slice(1)
     : "Guest";
